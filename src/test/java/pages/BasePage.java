@@ -5,6 +5,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -65,4 +66,22 @@ public class BasePage {
     public void assertEquals(WebElement element, String expectedValue){
         Assert.assertEquals(element.getText(),expectedValue);
     }
+    public void selectByValue(WebElement element, String value){
+        try {
+            if (value != null){
+                Select selectClass = new Select(element);
+                selectClass.selectByValue(value);
+            }else{
+                System.out.println("Parameter was null!");
+            }
+        }catch (StaleElementReferenceException e){
+            if (value != null){
+                Select selectClass = new Select(element);
+                selectClass.selectByValue(value);
+            }else {
+                System.out.println("Parameter was null!");
+            }
+        }
+    }
+
 }
