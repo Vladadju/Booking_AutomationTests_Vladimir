@@ -23,26 +23,7 @@ public class BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void typeText(WebElement element, String text){
-        wait.until(ExpectedConditions.visibilityOf(element));
-        wait.until(ExpectedConditions.elementToBeClickable(element));
 
-        try {
-            if (text != null){
-                element.clear();
-                element.sendKeys(text);
-            }else {
-                System.out.println("Parameter ws null!");
-            }
-        }catch (StaleElementReferenceException e){
-            if (text != null){
-                element.clear();
-                element.sendKeys(text);
-            }else {
-                System.out.println("Parameter was null!");
-            }
-        }
-    }
     public void click(WebElement element){
         wait.until(ExpectedConditions.visibilityOf(element));
         wait.until(ExpectedConditions.elementToBeClickable(element));
