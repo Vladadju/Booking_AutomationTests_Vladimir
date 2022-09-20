@@ -41,8 +41,9 @@ public class FlightsPage extends BasePage {
     WebElement airportFrom;
     @FindBy(css = "input[placeholder='Where from?']")
     WebElement airportFromInput;
-    @FindBy(xpath = "//*[@id='root']/div/div[1]/div[2]/div/div[1]/div/div/div[2]/div[2]/div/div/div/div[2]/div/div[3]/div/span/div/div")
+    @FindBy(css = "input[placeholder='Where to?']")
     WebElement airportTo;
+    // //*[@id='root']/div/div[1]/div[2]/div/div[1]/div/div/div[2]/div[2]/div/div/div/div[2]/div/div[3]/div/span/div/div
     @FindBy(xpath = "//input[@data-testid='searchbox_destination_input']")
     WebElement airportToInput;
     // //*[@id="root"]/div/div[1]/div[2]/div/div[1]/div/div/div[2]/div[2]/div/div/div/div[2]/div/div[3]/div/span/div/div
@@ -79,7 +80,7 @@ public class FlightsPage extends BasePage {
         Thread.sleep(1500);
         airportFrom.click();
         Thread.sleep(500);
-        driver.findElement(By.cssSelector(".Icon-module__root___12RuB.Icon-module__root--size-smaller___2UPZe")).click();
+        driver.findElement(By.cssSelector(".css-1lq4ejz")).click();
         Thread.sleep(500);
         airportFromInput.sendKeys(airportFromText);
         Thread.sleep(500);
@@ -88,6 +89,14 @@ public class FlightsPage extends BasePage {
         sideClick.click();
 
 
+    }
+    public void clearAirportFrom() throws InterruptedException {
+        Thread.sleep(1500);
+        airportFrom.click();
+        Thread.sleep(500);
+        driver.findElement(By.cssSelector(".css-1lq4ejz")).click();
+        Thread.sleep(500);
+        sideClick.click();
     }
     public void enterAirportTo(String airportToText) throws InterruptedException {
         airportTo.click();
