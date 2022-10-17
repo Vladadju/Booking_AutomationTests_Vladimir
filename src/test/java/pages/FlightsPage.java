@@ -37,7 +37,7 @@ public class FlightsPage extends BasePage {
     @FindBy(css = "select.css-1k0jlfl")
     WebElement selectClass;
     // values for a class: "ECONOMY", "PREMIUM_ECONOMY", "BUSINESS" and "FIRST"
-    @FindBy(xpath = "//div[@data-testid='searchbox_origin']")
+    @FindBy(xpath = "//div[@data-testid='searchbox_origin_0']")
     WebElement airportFrom;
     @FindBy(css = "input[placeholder='Where from?']")
     WebElement airportFromInput;
@@ -52,7 +52,7 @@ public class FlightsPage extends BasePage {
     List<WebElement> airportCheckBox;
     @FindBy(css = ".InputCheckbox-module__field___1zQqd")
     WebElement directFlightsOnlyCheckbox;
-    @FindBy(xpath = "//div[@data-testid='searchbox_date_picker_desktop_calendar']")
+    @FindBy(xpath = "//div[@data-testid='searchbox_date_picker_desktop_calendar_undefined']")
     List<WebElement> dateField;
     @FindBy(css = ".Actionable-module__root___3OFQq.Calendar-module__control___2UIvK.Calendar-module__control--next___22G_h")
     WebElement nextDateButton;

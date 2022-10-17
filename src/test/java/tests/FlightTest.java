@@ -32,7 +32,7 @@ public class FlightTest {
    }
    @AfterMethod
     public void tearDown(){
-//       driverManager.quitWebDriver();
+       driverManager.quitWebDriver();
    }
    // TC01 Verify that user will see available flights if he/she fill booking flight form correctly.
    @Test
@@ -44,7 +44,7 @@ public class FlightTest {
        flightsPage.selectLanguage("English (US)");
        flightsPage.enterAirportFrom("Lisbon");
        flightsPage.enterAirportTo("Rome");
-       flightsPage.selectDates("2022-10-02", "2022-10-18");
+       flightsPage.selectDates("2022-11-15", "2022-11-18");
        flightsPage.selectClasses("ECONOMY");
        flightsPage.clickOnSearchButton();
        Assert.assertEquals(driver.findElement(By.cssSelector(".css-19vrgv4"))
@@ -61,7 +61,7 @@ public class FlightTest {
        flightsPage.clickOnLanguageIcon();
        flightsPage.selectLanguage("English (US)");
        flightsPage.enterAirportFrom("Lisbon");
-       flightsPage.selectDates("2022-10-02", "2022-10-18");
+       flightsPage.selectDates("2022-11-15", "2022-11-18");
        flightsPage.selectClasses("ECONOMY");
        flightsPage.clickOnSearchButton();
        Assert.assertEquals(driver.findElement(By.xpath("//*[@id='basiclayout']/div/div[1]/div/div/div[2]/div[2]/div/div[4]/div")).
@@ -77,7 +77,7 @@ public class FlightTest {
         flightsPage.selectLanguage("English (US)");
         flightsPage.clearAirportFrom();
         flightsPage.enterAirportTo("Rome");
-        flightsPage.selectDates("2022-10-02", "2022-10-18");
+        flightsPage.selectDates("2022-11-15", "2022-11-18");
         flightsPage.selectClasses("ECONOMY");
         flightsPage.clickOnSearchButton();
         Assert.assertEquals(driver.findElement(By.xpath("//*[@id='basiclayout']/div/div[1]/div/div/div[2]/div[2]/div/div[4]/div")).
